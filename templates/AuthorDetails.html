@@ -1,0 +1,36 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Authors</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+              <style>
+           *{
+           background: url(https://i.postimg.cc/7hZBTzXS/Path.png);
+           }
+       </style>
+   </head>
+   <body>
+      <div class="main-container">
+         <div class="container">
+            <div class="container header-container clearfix">
+               <h1> BLOGGER</h1>
+            </div>
+            <div class="container clearfix">
+               <h1>Welcome to the Authors blog-list: </h1>
+               <br>
+               <hr>
+               {%for ob in obj%}
+               <a href="{% url 'author' ob.id %}">
+                   <h2>{{ob.blog_name}}</h2>
+               </a>
+               <br>
+               <hr>
+               {% endfor%}
+               <br>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

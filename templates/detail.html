@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="UTF-8">
+      <title> Blogs </title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+
+   </head>
+   <body>
+      <div class="main-container">
+         <div class="container header-container clearfix">
+                  <h1> BLOGGER</h1>
+         </div>
+
+         <!--banner-->
+         <div class="container clearfix">
+            <div class="intro-text left">
+                {% for obj in user_obj %}
+               <h1 class="intro-heading">{{obj.blog_name}}</h1><br>
+              <span class=name> {{obj.full_name}} <br> </span><br>
+               <span> {{obj.created_at}}
+              </span>
+               <p class="intro-para">
+                   {{obj.blog_content}}</p>
+                              <hr>
+              <div class="author_name">
+        <span class="written"> Written By </span>
+                <h2> {{obj.full_name}}</h2>
+                <hr>
+            </div>
+                {% endfor %}
+         </div>
+  </div>
+
+
+

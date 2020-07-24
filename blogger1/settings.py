@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'accounts',
+    'profile_crud',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +56,7 @@ ROOT_URLCONF = 'blogger1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,4 +119,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+MEDIA_URL = 'static/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR,'static/media')
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+AUTH_USER_MODEL = 'accounts.CustomUser'
